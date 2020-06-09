@@ -5918,7 +5918,7 @@ ul {
 /* line 156, /Applications/MAMP/htdocs/palash/cl/august 2019/202. Shop/202 shop html/sass/_new_arrival.scss */
 .new_arrival .single_arrivel_item:hover .hover_text {
   top: 31%;
-  opacity: 1;
+  opacity: 5;
   visibility: visible;
 }
 

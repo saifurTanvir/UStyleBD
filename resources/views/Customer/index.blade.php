@@ -3,7 +3,8 @@
 @section('customer')
 
     <!-- banner part start-->
-    <section class="banner_part">
+    <a href="#" class="btn btn-dark">Create New Cover</a>
+    <section class="banner_part" style="background-image: url('img/banner2.jpg')">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-7">
@@ -11,9 +12,7 @@
                         <div class="single_banner_slider">
                             <div class="banner_text">
                                 <div class="banner_text_iner">
-                                    <h5>Winter Fasion</h5>
-                                    <h1>Fashion Collection 2019</h1>
-                                    <a href="#" class="btn_1">shop now</a>
+
                                 </div>
                             </div>
                         </div>
@@ -27,6 +26,7 @@
     <!-- feature_part start-->
     <section class="feature_part pt-4">
         <div class="container-fluid p-lg-0 overflow-hidden">
+            <a href="#" class="btn btn-dark">Create New Feature</a>
             <div class="row align-items-center justify-content-between">
                 <div class="col-lg-4 col-sm-6">
                     <div class="single_feature_post_text">
@@ -35,6 +35,8 @@
                             <a href="single-product.html" class="btn_2">shop for male</a>
                         </div>
                     </div>
+                    <a href="#" class="btn btn-primary">Edit </a>
+                    <a href="#" class="float-right btn btn-primary">Delete</a>
                 </div>
                 <div class="col-lg-4 col-sm-6">
                     <div class="single_feature_post_text">
@@ -80,43 +82,42 @@
         </div>
         <div class="container-fluid">
             <div class="row">
+                <a href="#" class="btn btn-dark">Create New Arrival</a>
                 <div class="col-lg-12">
                     <div class="new_arrival_iner filter-container">
+
                         <div class="single_arrivel_item weidth_1 mix shoes">
+
                             <img src="img/arrivel/arrivel_5.png" alt="#">
                             <div class="hover_text">
                                 <p>Canvas</p>
                                 <a href="single-product.html"><h3>Lorem Canvas Low-Top Sneaker</h3></a>
-                                <div class="rate_icon">
-                                    <a href="#"> <i class="fas fa-star"></i> </a>
-                                    <a href="#"> <i class="fas fa-star"></i> </a>
-                                    <a href="#"> <i class="fas fa-star"></i> </a>
-                                    <a href="#"> <i class="fas fa-star"></i> </a>
-                                    <a href="#"> <i class="fas fa-star"></i> </a>
-                                </div>
+
                                 <h5>$150</h5>
+
+
                                 <div class="social_icon">
-                                    <a href="#"><i class="ti-heart"></i></a>
-                                    <a href="#"><i class="ti-bag"></i></a>
+                                    <a href="#" class="float-left" >Edit</a>
+                                    <a href="#" class="float-right">Delete</a>
                                 </div>
                             </div>
+
+
                         </div>
+
+
                         <div class="single_arrivel_item weidth_2 mix women">
                             <img src="img/arrivel/arrivel_2.png" alt="#">
                             <div class="hover_text">
                                 <p>Canvas</p>
                                 <a href="single-product.html"><h3>Lorem Canvas Low-Top Sneaker</h3></a>
-                                <div class="rate_icon">
-                                    <a href="#"> <i class="fas fa-star"></i> </a>
-                                    <a href="#"> <i class="fas fa-star"></i> </a>
-                                    <a href="#"> <i class="fas fa-star"></i> </a>
-                                    <a href="#"> <i class="fas fa-star"></i> </a>
-                                    <a href="#"> <i class="fas fa-star"></i> </a>
-                                </div>
+
                                 <h5>$150</h5>
+
+
                                 <div class="social_icon">
-                                    <a href="#"><i class="ti-heart"></i></a>
-                                    <a href="#"><i class="ti-bag"></i></a>
+                                    <a href="#" class="float-left" >Edit</a>
+                                    <a href="#" class="float-right">Delete</a>
                                 </div>
                             </div>
                         </div>
@@ -125,17 +126,13 @@
                             <div class="hover_text">
                                 <p>Canvas</p>
                                 <a href="single-product.html"><h3>Lorem Canvas Low-Top Sneaker</h3></a>
-                                <div class="rate_icon">
-                                    <a href="#"> <i class="fas fa-star"></i> </a>
-                                    <a href="#"> <i class="fas fa-star"></i> </a>
-                                    <a href="#"> <i class="fas fa-star"></i> </a>
-                                    <a href="#"> <i class="fas fa-star"></i> </a>
-                                    <a href="#"> <i class="fas fa-star"></i> </a>
-                                </div>
+
                                 <h5>$150</h5>
+
+
                                 <div class="social_icon">
-                                    <a href="#"><i class="ti-heart"></i></a>
-                                    <a href="#"><i class="ti-bag"></i></a>
+                                    <a href="#" class="float-left" >Edit</a>
+                                    <a href="#" class="float-right">Delete</a>
                                 </div>
                             </div>
                         </div>
@@ -144,13 +141,7 @@
                             <div class="hover_text">
                                 <p>Canvas</p>
                                 <a href="single-product.html"><h3>Lorem Canvas Low-Top Sneaker</h3></a>
-                                <div class="rate_icon">
-                                    <a href="#"> <i class="fas fa-star"></i> </a>
-                                    <a href="#"> <i class="fas fa-star"></i> </a>
-                                    <a href="#"> <i class="fas fa-star"></i> </a>
-                                    <a href="#"> <i class="fas fa-star"></i> </a>
-                                    <a href="#"> <i class="fas fa-star"></i> </a>
-                                </div>
+
                                 <h5>$150</h5>
                                 <div class="social_icon">
                                     <a href="#"><i class="ti-heart"></i></a>
@@ -163,13 +154,7 @@
                             <div class="hover_text">
                                 <p>Canvas</p>
                                 <a href="single-product.html"><h3>Lorem Canvas Low-Top Sneaker</h3></a>
-                                <div class="rate_icon">
-                                    <a href="#"> <i class="fas fa-star"></i> </a>
-                                    <a href="#"> <i class="fas fa-star"></i> </a>
-                                    <a href="#"> <i class="fas fa-star"></i> </a>
-                                    <a href="#"> <i class="fas fa-star"></i> </a>
-                                    <a href="#"> <i class="fas fa-star"></i> </a>
-                                </div>
+
                                 <h5>$150</h5>
                                 <div class="social_icon">
                                     <a href="#"><i class="ti-heart"></i></a>
@@ -182,13 +167,7 @@
                             <div class="hover_text">
                                 <p>Canvas</p>
                                 <a href="single-product.html"><h3>Lorem Canvas Low-Top Sneaker</h3></a>
-                                <div class="rate_icon">
-                                    <a href="#"> <i class="fas fa-star"></i> </a>
-                                    <a href="#"> <i class="fas fa-star"></i> </a>
-                                    <a href="#"> <i class="fas fa-star"></i> </a>
-                                    <a href="#"> <i class="fas fa-star"></i> </a>
-                                    <a href="#"> <i class="fas fa-star"></i> </a>
-                                </div>
+
                                 <h5>$150</h5>
                                 <div class="social_icon">
                                     <a href="#"><i class="ti-heart"></i></a>
