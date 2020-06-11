@@ -1,6 +1,5 @@
 <?php
 
-use App\Husband;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,17 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/index', function () {
-    return view('Customer.index');
-});
+Route::get('/index', 'AdminController@index')->name('index');
+
+Route::get('/coverImage', 'CoverImageController@create')->name('coverImage.create');
+Route::post('/coverImage', 'CoverImageController@update')->name('coverImage.update');
+
 
 Route::get('/category', function () {
     return view('Customer.category');
@@ -48,5 +47,7 @@ Route::get('/facebookLogin/callback', 'SocialAuthFacebookController@callback');
 Route::get('/googleLogin/redirect', 'SocialAuthGoogleController@redirect');
 Route::get('/googleLogin/callback', 'SocialAuthGoogleController@callback');
 
+Auth::routes();
 
+Route::get('/home', 'HomeController@index')->name('home');
 

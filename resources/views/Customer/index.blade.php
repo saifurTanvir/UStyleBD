@@ -3,8 +3,8 @@
 @section('customer')
 
     <!-- banner part start-->
-    <a href="#" class="btn btn-dark">Create New Cover</a>
-    <section class="banner_part" style="background-image: url('img/banner2.jpg')">
+    <a href="{{route('coverImage.create')}}" class="btn btn-dark">Create New Cover</a>
+    <section class="banner_part" style="background-image: url('{{asset('storage/'.$coverImage->image)}}')">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-7">
@@ -21,7 +21,7 @@
             </div>
         </div>
     </section>
-    <!-- banner part start-->
+    <!-- banner part end-->
 
     <!-- feature_part start-->
     <section class="feature_part pt-4">

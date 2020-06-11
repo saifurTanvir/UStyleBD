@@ -76,9 +76,32 @@
                             </div> -->
                         </div>
 
-                        <div class="ml-4">
-                            Tanvir
-                        </div>
+
+                            @guest
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                @if (Route::has('register'))
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                @endif
+                            @else
+                                <div class="nav-item dropdown">
+                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                        {{ Auth::user()->name }} <span class="caret"></span>
+                                    </a>
+
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                           onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                            {{ __('Logout') }}
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            @csrf
+                                        </form>
+                                    </div>
+                                </div>
+                            @endguest
+
 
                     </div>
                 </nav>
@@ -97,15 +120,15 @@
 </header>
 <!-- Header part end-->
 
-<div class="container">
+<div class="container-fluid">
     @yield('customer')
 </div>
 
 
 <!-- free shipping here -->
-<div class="container mb-5">
+<div class="container-fluid mb-5">
 <section class="shipping_details section_padding">
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-lg-3 col-sm-6">
                 <div class="single_shopping_details">
