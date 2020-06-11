@@ -61,9 +61,6 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="/aboutUs"> About Us</a>
                             </li>
-
-
-
                         </ul>
                     </div>
                     <div class="hearer_icon d-flex">

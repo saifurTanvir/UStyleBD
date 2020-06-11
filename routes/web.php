@@ -14,8 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
 Route::get('/', function () {
-    return view('Customer.index');
+    return view('welcome');
 });
 
 Route::get('/index', function () {
@@ -37,4 +41,12 @@ Route::get('/aboutUs', function () {
 Route::get('/contact', function () {
     return view('Customer.contact');
 });
+
+Route::get('/facebookLogin/redirect', 'SocialAuthFacebookController@redirect');
+Route::get('/facebookLogin/callback', 'SocialAuthFacebookController@callback');
+
+Route::get('/googleLogin/redirect', 'SocialAuthGoogleController@redirect');
+Route::get('/googleLogin/callback', 'SocialAuthGoogleController@callback');
+
+
 

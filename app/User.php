@@ -36,4 +36,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function facebook(){
+        return $this->hasMany(SocialFacebookAccount::class);
+    }
+
+    public function google(){
+        return $this->hasMany(SocialGoogleAccount::class);
+    }
 }
