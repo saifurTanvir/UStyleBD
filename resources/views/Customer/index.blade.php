@@ -26,35 +26,25 @@
     <!-- feature_part start-->
     <section class="feature_part pt-4">
         <div class="container-fluid p-lg-0 overflow-hidden">
-            <a href="#" class="btn btn-dark">Create New Feature</a>
+            <a href="{{route('featureProduct.create')}}" class="btn btn-dark">Create New Feature</a>
+
+
             <div class="row align-items-center justify-content-between">
+                @foreach($featureProducts as $featureProduct)
                 <div class="col-lg-4 col-sm-6">
                     <div class="single_feature_post_text">
-                        <img src="img/feature_1.png" alt="#">
+                        <img src="{{asset('storage/'.$featureProduct->image)}}" alt="#">
                         <div class="hover_text">
-                            <a href="single-product.html" class="btn_2">shop for male</a>
+                            <a href="single-product.html" class="btn_2">{{$featureProduct->title}}</a>
                         </div>
                     </div>
                     <a href="#" class="btn btn-primary">Edit </a>
-                    <a href="#" class="float-right btn btn-primary">Delete</a>
+                    <a href="#" class="float-right btn btn-primary mr-5">Delete</a>
                 </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="single_feature_post_text">
-                        <img src="img/feature_2.png" alt="#">
-                        <div class="hover_text">
-                            <a href="single-product.html" class="btn_2">shop for male</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="single_feature_post_text">
-                        <img src="img/feature_3.png" alt="#">
-                        <div class="hover_text">
-                            <a href="single-product.html" class="btn_2">shop for male</a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
+
+
         </div>
     </section>
     <!-- upcoming_event part start-->

@@ -24,6 +24,9 @@ Route::get('/index', 'AdminController@index')->name('index');
 Route::get('/coverImage', 'CoverImageController@create')->name('coverImage.create');
 Route::post('/coverImage', 'CoverImageController@update')->name('coverImage.update');
 
+Route::get('/featureProduct', 'FeatureProductMasterController@create')->name('featureProduct.create');
+Route::post('/featureProduct', 'FeatureProductMasterController@store')->name('featureProduct.store');
+
 
 Route::get('/category', function () {
     return view('Customer.category');
