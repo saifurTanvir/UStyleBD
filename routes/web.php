@@ -26,6 +26,12 @@ Route::post('/coverImage', 'CoverImageController@update')->name('coverImage.upda
 
 Route::get('/featureProduct', 'FeatureProductMasterController@create')->name('featureProduct.create');
 Route::post('/featureProduct', 'FeatureProductMasterController@store')->name('featureProduct.store');
+Route::get('/featureProduct/{product}/edit', 'FeatureProductMasterController@edit')->name('featureProduct.edit');
+Route::patch('/featureProduct/{product}', 'FeatureProductMasterController@update')->name('featureProduct.update');
+Route::get('/featureProduct/{product}/detail', 'ProductDetailController@index')->name('productDetail.index');
+//Route::get('/featureProduct/{product}/detail', function(){
+  // return "Okay";
+//})->name('productDetail.index');
 
 
 Route::get('/category', function () {

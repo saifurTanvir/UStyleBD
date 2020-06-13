@@ -35,10 +35,10 @@
                     <div class="single_feature_post_text">
                         <img src="{{asset('storage/'.$featureProduct->image)}}" alt="#">
                         <div class="hover_text">
-                            <a href="single-product.html" class="btn_2">{{$featureProduct->title}}</a>
+                            <a href="{{route('productDetail.index', $featureProduct->id)}}" class="btn_2">{{$featureProduct->title}}</a>
                         </div>
                     </div>
-                    <a href="#" class="btn btn-primary">Edit </a>
+                    <a href="{{route('productDetail.index', $featureProduct->id)}}" class="btn btn-primary">Edit </a>
                     <a href="#" class="float-right btn btn-primary mr-5">Delete</a>
                 </div>
                 @endforeach
