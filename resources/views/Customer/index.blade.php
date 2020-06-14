@@ -38,8 +38,8 @@
                             <a href="{{route('productDetail.index', $featureProduct->id)}}" class="btn_2">{{$featureProduct->title}}</a>
                         </div>
                     </div>
-                    <a href="{{route('productDetail.index', $featureProduct->id)}}" class="btn btn-primary">Edit </a>
-                    <a href="#" class="float-right btn btn-primary mr-5">Delete</a>
+                    <a href="{{route('featureProduct.edit', $featureProduct->id)}}" class="btn btn-primary">Edit </a>
+                    <a href="{{route('featureProduct.delete', $featureProduct->id)}}" class="float-right btn btn-primary mr-5">Delete</a>
                 </div>
                 @endforeach
             </div>

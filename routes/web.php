@@ -28,10 +28,12 @@ Route::get('/featureProduct', 'FeatureProductMasterController@create')->name('fe
 Route::post('/featureProduct', 'FeatureProductMasterController@store')->name('featureProduct.store');
 Route::get('/featureProduct/{product}/edit', 'FeatureProductMasterController@edit')->name('featureProduct.edit');
 Route::patch('/featureProduct/{product}', 'FeatureProductMasterController@update')->name('featureProduct.update');
-Route::get('/featureProduct/{product}/detail', 'ProductDetailController@index')->name('productDetail.index');
-//Route::get('/featureProduct/{product}/detail', function(){
-  // return "Okay";
-//})->name('productDetail.index');
+Route::get('/featureProduct/{product}/delete', 'FeatureProductMasterController@delete')->name('featureProduct.delete');
+Route::delete('/featureProduct/{product}', 'FeatureProductMasterController@destroy')->name('featureProduct.destroy');
+
+Route::get('/productDetails/{product}', 'ProductDetailController@index')->name('productDetail.index');
+Route::get('/productDetails/{productDetail}/edit', 'ProductDetailController@edit')->name('productDetail.edit');
+Route::patch('/productDetails/{productDetail}', 'ProductDetailController@update')->name('productDetail.update');
 
 
 Route::get('/category', function () {

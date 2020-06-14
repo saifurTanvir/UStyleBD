@@ -51,13 +51,13 @@
                             </div>
                             <div class="add_to_cart">
                                 <a href="#" class="btn_3">add to cart</a>
-                                <a href="#" class="like_us"> <i class="ti-heart"></i> </a>
                             </div>
                             <div class="social_icon">
                                 <a href="#" class="fb"><i class="ti-facebook"></i></a>
                                 <a href="#" class="tw"><i class="ti-twitter-alt"></i></a>
                                 <a href="#" class="li"><i class="ti-linkedin"></i></a>
                             </div>
+                            <a href="{{route('productDetail.edit', $detail->id)}}" class="btn btn-dark mt-4">Edit Details</a>
                         </div>
                     </div>
                 </div>

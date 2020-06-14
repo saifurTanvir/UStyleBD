@@ -15,7 +15,6 @@ class FeatureProductMasterController extends Controller
     public function store(){
         $data = request()->validate([
            'title' => 'required|max:20',
-            'image' => 'required|file|image',
             'image1' => 'required|file|image',
             'image2' => 'required|file|image',
             'image3' => 'required|file|image',
@@ -52,7 +51,6 @@ class FeatureProductMasterController extends Controller
     }
 
     public function edit(FeatureProductMaster $product){
-        //dd($product->image);
         return view('FeatureProduct.edit', compact('product'));
     }
 
@@ -66,6 +64,17 @@ class FeatureProductMasterController extends Controller
             'title' => $data['title'],
             'image' => request()->image->store('FeatureProduct', 'public'),
         ]);
+
+        return redirect()->route('index');
+    }
+
+    public function delete(FeatureProductMaster $product){
+        return view('FeatureProduct.delete', compact('product'));
+    }
+
+    public function destroy(FeatureProductMaster $product){
+        $product->details()->delete();
+        $product->delete();
 
         return redirect()->route('index');
     }

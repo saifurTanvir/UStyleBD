@@ -26,7 +26,7 @@
 
                         <div class="form-group d-flex flex-column">
                             <label for="image">Image</label>
-                            <input type="file" name="image" value="{{old('image') ?? $product->image}}" class="py-2">
+                            <input type="file" name="image" value="{{asset('storage/'.$product->image)}}" class="py-2">
                             <small id="imageHelp" class="form-text text-muted">1920 x 850 image is most accurate for feature product!!</small>
                             <div class="text-danger">{{$errors->first('image')}}</div>
                         </div>
