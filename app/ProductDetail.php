@@ -12,4 +12,8 @@ class ProductDetail extends Model
     public function featureProduct(){
         return $this->belongsTo(FeatureProductMaster::class);
     }
+
+    public function newArrival(){
+        return $this->belongsTo(NewArrival::class);
+    }
 }

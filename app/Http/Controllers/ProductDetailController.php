@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\FeatureProductMaster;
+use App\NewArrival;
 use App\ProductDetail;
 use Illuminate\Http\Request;
 
@@ -13,10 +14,17 @@ class ProductDetailController extends Controller
         return view('ProductDetail.index', compact('product', 'detail'));
     }
 
+    public function indexForNewArrival(NewArrival $product){
+        $detail = $product->details()->first();
+        return view('ProductDetail.index', compact('product', 'detail'));
+    }
+
     public function edit(ProductDetail $productDetail){
         //dd($product);
         return view('ProductDetail.edit', compact('productDetail'));
     }
+
+
 
     public function update(ProductDetail $productDetail){
         $data = request()->validate([

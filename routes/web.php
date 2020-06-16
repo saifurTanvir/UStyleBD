@@ -31,7 +31,19 @@ Route::patch('/featureProduct/{product}', 'FeatureProductMasterController@update
 Route::get('/featureProduct/{product}/delete', 'FeatureProductMasterController@delete')->name('featureProduct.delete');
 Route::delete('/featureProduct/{product}', 'FeatureProductMasterController@destroy')->name('featureProduct.destroy');
 
+Route::get('/newArrival/create', 'NewArrivalController@create')->name('newArrival.create');
+Route::post('/newArrival/create', 'NewArrivalController@store')->name('newArrival.store');
+Route::get('/newArrival/{product}/edit', 'NewArrivalController@edit')->name('newArrival.edit');
+Route::patch('/newArrival/{product}', 'NewArrivalController@update')->name('newArrival.update');
+Route::get('/newArrival/{product}/delete', 'NewArrivalController@delete')->name('newArrival.delete');
+Route::delete('/newArrival/{product}', 'NewArrivalController@destroy')->name('newArrival.destroy');
+
+
+
+
 Route::get('/productDetails/{product}', 'ProductDetailController@index')->name('productDetail.index');
+Route::get('/productDetails/{product}/newArrival', 'ProductDetailController@indexForNewArrival')->name('productDetail.index.newArrival');
+
 Route::get('/productDetails/{productDetail}/edit', 'ProductDetailController@edit')->name('productDetail.edit');
 Route::patch('/productDetails/{productDetail}', 'ProductDetailController@update')->name('productDetail.update');
 
