@@ -24,21 +24,21 @@
                                 <div class="form-group d-flex flex-column">
                                     <label for="image1">Image 1</label>
                                     <input type="file" name="image1" class="py-2">
-                                    <small id="image1Help" class="form-text text-muted">1920 x 850 image is most accurate as details picture of the feature product!!</small>
+                                    <small id="image1Help" class="form-text text-muted">630 x 700 image is most accurate as details picture of the feature product!!</small>
                                     <div class="text-danger">{{$errors->first('image1')}}</div>
                                 </div>
 
                                 <div class="form-group d-flex flex-column">
                                     <label for="image2">Image 2</label>
                                     <input type="file" name="image2" class="py-2">
-                                    <small id="image2Help" class="form-text text-muted">1920 x 850 image is most accurate as details picture of the feature product!!</small>
+                                    <small id="image2Help" class="form-text text-muted">630 x 700 image is most accurate as details picture of the feature product!!</small>
                                     <div class="text-danger">{{$errors->first('image2')}}</div>
                                 </div>
 
                                 <div class="form-group d-flex flex-column">
                                     <label for="image3">Image 3</label>
                                     <input type="file" name="image3" class="py-2">
-                                    <small id="image3Help" class="form-text text-muted">1920 x 850 image is most accurate as details picture of the feature product!!</small>
+                                    <small id="image3Help" class="form-text text-muted">630 x 700 image is most accurate as details picture of the feature product!!</small>
                                     <div class="text-danger">{{$errors->first('image3')}}</div>
                                 </div>
 

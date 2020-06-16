@@ -27,8 +27,18 @@
     <!-- banner part end-->
 
     <!-- feature_part start-->
-    <section class="feature_part pt-4">
+    <section class="feature_part pt-4 mt-30">
         <div class="container-fluid p-lg-0 overflow-hidden">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-8">
+                        <div class="arrival_tittle">
+                            <h2>Feature Product</h2>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
             <a href="{{route('featureProduct.create')}}" class="btn btn-dark">Create New Feature</a>
 
 
@@ -42,7 +52,7 @@
                         </div>
                     </div>
                     <a href="{{route('featureProduct.edit', $featureProduct->id)}}" class="btn btn-primary">Edit </a>
-                    <a href="{{route('featureProduct.delete', $featureProduct->id)}}" class="float-right btn btn-primary mr-5">Delete</a>
+                    <a href="{{route('featureProduct.delete', $featureProduct->id)}}" class="float-right btn btn-primary ">Delete</a>
                 </div>
                 @endforeach
             </div>

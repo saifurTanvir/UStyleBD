@@ -6,6 +6,7 @@ use App\FeatureProductMaster;
 use App\NewArrival;
 use App\ProductDetail;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 class NewArrivalController extends Controller
 {
@@ -46,6 +47,19 @@ class NewArrivalController extends Controller
             'instraLink' => $data['instraLink']
         ]);
 
+        $product = NewArrival::orderBy('id', 'desc')->first();
+        $detail = $product->details()->first();
+
+        $image = Image::make(public_path('storage/'.$product->image))->fit(460, 560);
+        $image->save();
+
+        $image1 = Image::make(public_path('storage/'.$detail->image1))->fit(460, 560);
+        $image1->save();
+        $image2 = Image::make(public_path('storage/'.$detail->image2))->fit(460, 560);
+        $image2->save();
+        $image3 = Image::make(public_path('storage/'.$detail->image3))->fit(460, 560);
+        $image3->save();
+
         return redirect()->route('index');
     }
 
@@ -65,6 +79,9 @@ class NewArrivalController extends Controller
             'title' => $data['title'],
             'image' => request()->image->store('NewArrival', 'public'),
         ]);
+
+        $image = Image::make(public_path('storage/'.$product->image))->fit(460, 560);
+        $image->save();
 
         return redirect()->route('index');
     }

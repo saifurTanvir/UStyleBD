@@ -6,6 +6,7 @@ use App\FeatureProductMaster;
 use App\NewArrival;
 use App\ProductDetail;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 class ProductDetailController extends Controller
 {
@@ -54,6 +55,15 @@ class ProductDetailController extends Controller
             'fbLink' => $data['fbLink'],
             'instraLink' => $data['instraLink'],
         ]);
+
+
+
+        $image1 = Image::make(public_path('storage/'.$productDetail->image1))->fit(460, 560);
+        $image1->save();
+        $image2 = Image::make(public_path('storage/'.$productDetail->image2))->fit(460, 560);
+        $image2->save();
+        $image3 = Image::make(public_path('storage/'.$productDetail->image3))->fit(460, 560);
+        $image3->save();
 
         return redirect()->route('index');
     }

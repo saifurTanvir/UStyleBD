@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\CoverImage;
 use App\FeatureProductMaster;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 class FeatureProductMasterController extends Controller
 {
@@ -45,6 +46,18 @@ class FeatureProductMasterController extends Controller
             'instraLink' => $data['instraLink']
         ]);
 
+        $product = FeatureProductMaster::orderBy('id', 'desc')->first();
+        $detail = $product->details()->first();
+
+        $image = Image::make(public_path('storage/'.$product->image))->fit(630, 700);
+        $image->save();
+
+        $image1 = Image::make(public_path('storage/'.$detail->image1))->fit(630, 700);
+        $image1->save();
+        $image2 = Image::make(public_path('storage/'.$detail->image2))->fit(630, 700);
+        $image2->save();
+        $image3 = Image::make(public_path('storage/'.$detail->image3))->fit(630, 700);
+        $image3->save();
 
 
         return redirect()->route('index');
@@ -64,6 +77,9 @@ class FeatureProductMasterController extends Controller
             'title' => $data['title'],
             'image' => request()->image->store('FeatureProduct', 'public'),
         ]);
+
+        $image = Image::make(public_path('storage/'.$product->image))->fit(630, 700);
+        $image->save();
 
         return redirect()->route('index');
     }

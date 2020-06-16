@@ -34,7 +34,7 @@
         <div class="row align-items-center justify-content-center">
             <div class="col-lg-11">
                 <nav class="navbar navbar-expand-lg navbar-light">
-                    <a class="navbar-brand" href="index.html"> <img src="img/logo.png" alt="logo"> </a>
+                    <a class="navbar-brand" href="index.html"> UStyleBD </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
                             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="Toggle navigation">
@@ -65,7 +65,7 @@
                         </ul>
                     </div>
                     <div class="hearer_icon d-flex">
-                        <div class="dropdown cart">
+                        <div class="dropdown cart mt-2">
                             <a class="dropdown-toggle" href="#" id="navbarDropdown3" role="button"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="ti-bag"></i>
