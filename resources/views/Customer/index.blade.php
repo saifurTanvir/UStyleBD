@@ -3,7 +3,10 @@
 @section('customer')
 
     <!-- banner part start-->
-    <a href="{{route('coverImage.create')}}" class="btn btn-dark">Create New Cover</a>
+    @can('create', App\Admin::class)
+        <a href="{{route('coverImage.create')}}" class="btn btn-dark">Create New Cover</a>
+    @endcan
+
     @if($coverImage)
 
         <section class="banner_part" style="background-image: url('{{asset('storage/'.$coverImage->image)}}')">
@@ -39,7 +42,9 @@
 
                 </div>
             </div>
-            <a href="{{route('featureProduct.create')}}" class="btn btn-dark">Create New Feature</a>
+            @can('create', App\Admin::class)
+                <a href="{{route('featureProduct.create')}}" class="btn btn-dark">Create New Feature</a>
+            @endcan
 
 
             <div class="row align-items-center justify-content-between">
@@ -51,8 +56,12 @@
                             <a href="{{route('productDetail.index', $featureProduct->id)}}" class="btn_2">{{$featureProduct->title}}</a>
                         </div>
                     </div>
-                    <a href="{{route('featureProduct.edit', $featureProduct->id)}}" class="btn btn-primary">Edit </a>
-                    <a href="{{route('featureProduct.delete', $featureProduct->id)}}" class="float-right btn btn-primary ">Delete</a>
+
+                    @can('create', App\Admin::class)
+                        <a href="{{route('featureProduct.edit', $featureProduct->id)}}" class="btn btn-primary">Edit </a>
+                        <a href="{{route('featureProduct.delete', $featureProduct->id)}}" class="float-right btn btn-primary ">Delete</a>
+                    @endcan
+
                 </div>
                 @endforeach
             </div>
@@ -76,7 +85,10 @@
         </div>
         <div class="container-fluid">
             <div class="row">
-                <a href="{{route('newArrival.create')}}" class="btn btn-dark">Create New Arrival</a>
+                @can('create', App\Admin::class)
+                    <a href="{{route('newArrival.create')}}" class="btn btn-dark">Create New Arrival</a>
+                @endcan
+
                 <div class="col-lg-12">
                     <div class="new_arrival_iner filter-container">
 
@@ -92,9 +104,14 @@
                                         <h5>$150</h5>
 
 
+
+
                                         <div class="social_icon">
-                                            <a href="{{route('newArrival.edit', $newArrival->id)}}" class="float-left" >Edit</a>
-                                            <a href="{{route('newArrival.delete', $newArrival->id)}}" class="float-right">Delete</a>
+                                            @can('create', App\Admin::class)
+                                                <a href="{{route('newArrival.edit', $newArrival->id)}}" class="float-left" >Edit</a>
+                                                <a href="{{route('newArrival.delete', $newArrival->id)}}" class="float-right">Delete</a>
+                                            @endcan
+
                                         </div>
                                     </div>
                                 </div>

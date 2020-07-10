@@ -47,6 +47,8 @@ Route::get('/productDetails/{product}/newArrival', 'ProductDetailController@inde
 Route::get('/productDetails/{productDetail}/edit', 'ProductDetailController@edit')->name('productDetail.edit');
 Route::patch('/productDetails/{productDetail}', 'ProductDetailController@update')->name('productDetail.update');
 
+Route::post('/addingCart/{productDetail}', 'AddingCartController@create')->name('addingCart.create');
+
 
 Route::get('/category', function () {
     return view('Customer.category');
