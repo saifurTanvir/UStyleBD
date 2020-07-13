@@ -7,13 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 class ProductDetail extends Model
 {
     protected $guarded = [];
-    protected $primaryKey = 'id';
+    //protected $primaryKey = 'id';
 
-    public function featureProduct(){
-        return $this->belongsTo(FeatureProductMaster::class);
+
+
+    public function productDetailable(){
+        return $this->morphTo(__FUNCTION__, 'productDetailable_type', 'productDetailable_id');
     }
 
-    public function newArrival(){
-        return $this->belongsTo(NewArrival::class);
+    public function addingCart(){
+        return $this->hasMany(AddingCart::class);
     }
+
+
 }

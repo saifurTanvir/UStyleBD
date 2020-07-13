@@ -9,7 +9,7 @@ class FeatureProductMaster extends Model
     protected $guarded = [];
     public $primaryKey = 'id';
 
-    public function details(){
-        return $this->hasOne(ProductDetail::class);
+    public function productDetail(){
+        return $this->morphOne(ProductDetail::class, 'productDetailable');
     }
 }

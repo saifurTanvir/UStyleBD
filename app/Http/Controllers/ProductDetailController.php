@@ -11,12 +11,12 @@ use Intervention\Image\Facades\Image;
 class ProductDetailController extends Controller
 {
     public function index(FeatureProductMaster $product){
-        $detail = $product->details()->first();
+        $detail = $product->productDetail()->first();
         return view('ProductDetail.index', compact('product', 'detail'));
     }
 
     public function indexForNewArrival(NewArrival $product){
-        $detail = $product->details()->first();
+        $detail = $product->productDetail()->first();
         return view('ProductDetail.index', compact('product', 'detail'));
     }
 

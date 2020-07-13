@@ -19,6 +19,7 @@ class FeatureProductMasterController extends Controller
             'image1' => 'required|file|image',
             'image2' => 'required|file|image',
             'image3' => 'required|file|image',
+            'price' => 'required|numeric',
             'category' =>'required',
             'size' => 'required',
             'stock' => 'required|numeric',
@@ -31,9 +32,10 @@ class FeatureProductMasterController extends Controller
         $featureProduct = FeatureProductMaster::create([
             'title' => $data['title'],
             'image' => request()->image->store('FeatureProduct', 'public'),
+            'price' => $data['price'],
         ]);
 
-        $featureProduct->details()->create([
+        $featureProduct->productDetail()->create([
            'image1' =>  request()->image1->store('ProductDetails', 'public'),
             'image2' =>  request()->image2->store('ProductDetails', 'public'),
             'image3' =>  request()->image3->store('ProductDetails', 'public'),
@@ -47,7 +49,7 @@ class FeatureProductMasterController extends Controller
         ]);
 
         $product = FeatureProductMaster::orderBy('id', 'desc')->first();
-        $detail = $product->details()->first();
+        $detail = $product->productDetail()->first();
 
         $image = Image::make(public_path('storage/'.$product->image))->fit(630, 700);
         $image->save();
@@ -70,12 +72,14 @@ class FeatureProductMasterController extends Controller
     public function update(FeatureProductMaster $product){
         $data = request()->validate([
             'title' => 'required|max:20',
-            'image' => 'required|file|image'
+            'image' => 'required|file|image',
+            'price' => 'required|numeric',
         ]);
 
         $product->update([
             'title' => $data['title'],
             'image' => request()->image->store('FeatureProduct', 'public'),
+            'price' => $data['price'],
         ]);
 
         $image = Image::make(public_path('storage/'.$product->image))->fit(630, 700);
@@ -89,7 +93,7 @@ class FeatureProductMasterController extends Controller
     }
 
     public function destroy(FeatureProductMaster $product){
-        $product->details()->delete();
+        $product->productDetail()->delete();
         $product->delete();
 
         return redirect()->route('index');

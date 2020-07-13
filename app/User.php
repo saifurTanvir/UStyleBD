@@ -44,4 +44,8 @@ class User extends Authenticatable
     public function google(){
         return $this->hasMany(SocialGoogleAccount::class);
     }
+
+    public function addingCart(){
+        return $this->hasMany(AddingCart::class);
+    }
 }

@@ -20,6 +20,7 @@ class NewArrivalController extends Controller
             'image1' => 'required|file|image',
             'image2' => 'required|file|image',
             'image3' => 'required|file|image',
+            'price' => 'required|numeric',
             'category' =>'required',
             'size' => 'required',
             'stock' => 'required|numeric',
@@ -32,9 +33,11 @@ class NewArrivalController extends Controller
         $newArrival = NewArrival::create([
             'title' => $data['title'],
             'image' => request()->image->store('NewArrival', 'public'),
+            'price' => $data['price'],
+
         ]);
 
-        $newArrival->details()->create([
+        $newArrival->productDetail()->create([
             'image1' =>  request()->image1->store('ProductDetails', 'public'),
             'image2' =>  request()->image2->store('ProductDetails', 'public'),
             'image3' =>  request()->image3->store('ProductDetails', 'public'),
@@ -48,7 +51,7 @@ class NewArrivalController extends Controller
         ]);
 
         $product = NewArrival::orderBy('id', 'desc')->first();
-        $detail = $product->details()->first();
+        $detail = $product->productDetail()->first();
 
         $image = Image::make(public_path('storage/'.$product->image))->fit(460, 560);
         $image->save();
@@ -65,19 +68,21 @@ class NewArrivalController extends Controller
 
 
     public function edit(NewArrival $product){
-        $detail = $product->details()->first();
+        $detail = $product->productDetail()->first();
         return view('NewArrival.edit', compact('product', 'detail'));
     }
 
     public function update(NewArrival $product){
         $data = request()->validate([
             'title' => 'required|max:20',
-            'image' => 'required|file|image'
+            'image' => 'required|file|image',
+            'price' => 'required|numeric'
         ]);
 
         $product->update([
             'title' => $data['title'],
             'image' => request()->image->store('NewArrival', 'public'),
+            'price' => $data['price']
         ]);
 
         $image = Image::make(public_path('storage/'.$product->image))->fit(460, 560);
@@ -91,7 +96,7 @@ class NewArrivalController extends Controller
     }
 
     public function destroy(NewArrival $product){
-        $product->details()->delete();
+        $product->productDetail()->delete();
         $product->delete();
 
         return redirect()->route('index');

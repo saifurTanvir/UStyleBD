@@ -17,6 +17,7 @@ class CreateFeatureProductMastersTable extends Migration
             $table->bigIncrements('id');
             $table->string('title');
             $table->string('image');
+            $table->integer('price');
             $table->timestamps();
         });
     }

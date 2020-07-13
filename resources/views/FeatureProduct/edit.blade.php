@@ -30,6 +30,12 @@
                             <small id="imageHelp" class="form-text text-muted">630 x 700 image is most accurate for feature product!!</small>
                             <div class="text-danger">{{$errors->first('image')}}</div>
                         </div>
+                        <div class="form-group" >
+                            <label>Stock </label>
+                            <input type="number" name="price" value="{{old('price') ?? $product->price}}" placeholder="500/1000 ..." class="form-control">
+                            <small id="priceHelp" class="form-text text-muted">Enter the accurate price of your product.</small>
+                            <div class="text-danger">{{$errors->first('price')}}</div>
+                        </div>
                         <button type="submit" class="btn btn-primary"> Update</button>
                     </form>
 

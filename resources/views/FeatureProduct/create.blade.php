@@ -61,6 +61,13 @@
                                     <div class="text-danger">{{$errors->first('image3')}}</div>
                                 </div>
 
+                                <div class="form-group" >
+                                    <label>Stock </label>
+                                    <input type="number" name="price" value="{{old('price')}}" placeholder="500/1000 ..." class="form-control">
+                                    <small id="priceHelp" class="form-text text-muted">Enter the accurate price of your product.</small>
+                                    <div class="text-danger">{{$errors->first('price')}}</div>
+                                </div>
+
                                 <div class="form-group d-flex flex-column">
                                     <label for="category">Category</label>
                                     <input type="text" name="category" value="{{old('category')}}" placeholder="Cotton/Silk ..." class="form-control">

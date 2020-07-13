@@ -8,7 +8,7 @@ class NewArrival extends Model
 {
     protected $guarded = [];
 
-    public function details(){
-        return $this->hasOne(ProductDetail::class);
+    public function productDetail(){
+        return $this->morphOne(ProductDetail::class, 'productDetailable');
     }
 }

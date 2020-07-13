@@ -98,10 +98,12 @@
                                 <div class="single_arrivel_item weidth_3 mix " >
                                     <img src="{{asset('storage/'.$newArrival->image)}}" alt="#">
                                     <div class="hover_text">
-                                        <p>Canvas</p>
+                                        <p>{{$newArrival->productDetail->discount}}% OFF</p>
                                         <a href="{{route('productDetail.index.newArrival', $newArrival->id)}}"><h3>{{$newArrival->title}}</h3></a>
 
-                                        <h5>$150</h5>
+                                        <h5><div style="text-decoration: line-through">{{$newArrival->price}}Taka</div>{{(int)($newArrival->price - ($newArrival->price*(1/$newArrival->productDetail->discount)))}}Taka</h5>
+
+
 
 
 

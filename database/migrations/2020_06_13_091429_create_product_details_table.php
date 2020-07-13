@@ -15,15 +15,15 @@ class CreateProductDetailsTable extends Migration
     {
         Schema::create('product_details', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('feature_product_master_id')->nullable();
-            $table->unsignedBigInteger('new_arrival_id')->nullable();
+            $table->unsignedBigInteger('productDetailable_id');
+            $table->string('productDetailable_type');
             $table->string('image1');
             $table->string('image2');
             $table->string('image3');
             $table->string('category');
             $table->string('size');
-            $table->string('stock');
-            $table->string('discount');
+            $table->integer('stock');
+            $table->integer('discount');
             $table->string('description');
             $table->string('fbLink')->nullable();
             $table->string('instraLink')->nullable();

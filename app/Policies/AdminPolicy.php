@@ -42,7 +42,7 @@ class AdminPolicy
     public function create(User $user)
     {
         return in_array($user->email, [
-            'admin@admin.com',
+            'saifur@gmail.com',
         ]);
     }
 

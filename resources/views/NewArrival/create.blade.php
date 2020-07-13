@@ -61,6 +61,13 @@
                                     <div class="text-danger">{{$errors->first('image3')}}</div>
                                 </div>
 
+                                <div class="form-group" >
+                                    <label>Stock </label>
+                                    <input type="number" name="price" value="{{old('price')}}" placeholder="500/1000 ..." class="form-control">
+                                    <small id="priceHelp" class="form-text text-muted">Enter the accurate price of your product.</small>
+                                    <div class="text-danger">{{$errors->first('price')}}</div>
+                                </div>
+
                                 <div class="form-group d-flex flex-column">
                                     <label for="category">Category</label>
                                     <input type="text" name="category" value="{{old('category')}}" placeholder="Cotton/Silk ..." class="form-control">
@@ -77,14 +84,14 @@
 
                                 <div class="form-group" >
                                     <label>Stock </label>
-                                    <input type="text" name="stock" value="{{old('stock')}}" placeholder="25/30 ..." class="form-control">
+                                    <input type="number" name="stock" value="{{old('stock')}}" placeholder="25/30 ..." class="form-control">
                                     <small id="stockHelp" class="form-text text-muted">Enter the number of stock you have current now.</small>
                                     <div class="text-danger">{{$errors->first('stock')}}</div>
                                 </div>
 
                                 <div class="form-group" >
                                     <label>Discount</label>
-                                    <input type="text" name="discount" value="{{old('discount')}}" placeholder="5/10 ..." class="form-control">
+                                    <input type="number" name="discount" value="{{old('discount')}}" placeholder="5/10 ..." class="form-control">
                                     <small id="discountHelp" class="form-text text-muted">Offering a smart discount is good both customer and seller!</small>
                                     <div class="text-danger">{{$errors->first('discount')}}</div>
                                 </div>
