@@ -65,17 +65,8 @@
                         </ul>
                     </div>
                     <div class="hearer_icon d-flex">
-                        <div class="dropdown cart mt-2">
-                            <a class="dropdown-toggle" href="#" id="navbarDropdown3" role="button"
-                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="ti-bag"></i>
-                            </a>
-                            <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <div class="single_product">
+                        <a href="{{route('addingCart.index')}}"  class="mt-2 ">Cart<span class="badge text-danger w-25">5</span></a>
 
-                                </div>
-                            </div> -->
-                        </div>
 
 
                             @guest

@@ -16,10 +16,11 @@ class CreateAddingCartsTable extends Migration
         Schema::create('adding_carts', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('product_id');
+            $table->unsignedBigInteger('product_detail_id');
             $table->integer('quantity');
             $table->integer('total');
             $table->integer('net');
+            $table->string('status');
             $table->timestamps();
         });
     }

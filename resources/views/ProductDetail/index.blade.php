@@ -67,7 +67,7 @@
                                     <a href="#" class="li"><i class="ti-linkedin"></i></a>
                                 </div>
                                 @can('create', App\Admin::class)
-                                    <a href="{{route('productDetail.edit', $detail->productDetailable_id)}}" class="btn btn-dark mt-4">Edit Details</a>
+                                    <a href="{{route('productDetail.edit', $detail->id)}}" class="btn btn-dark mt-4">Edit Details</a>
                                 @endcan
 
                             </div>

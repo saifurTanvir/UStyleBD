@@ -76,6 +76,7 @@ class FeatureProductMasterController extends Controller
             'price' => 'required|numeric',
         ]);
 
+
         $product->update([
             'title' => $data['title'],
             'image' => request()->image->store('FeatureProduct', 'public'),

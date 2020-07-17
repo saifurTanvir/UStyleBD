@@ -48,6 +48,8 @@ Route::get('/productDetails/{productDetail}/edit', 'ProductDetailController@edit
 Route::patch('/productDetails/{productDetail}', 'ProductDetailController@update')->name('productDetail.update');
 
 Route::post('/addingCart/{productDetail}', 'AddingCartController@create')->name('addingCart.create');
+Route::get('/customer/cart', 'AddingCartController@index')->name('addingCart.index');
+
 
 
 Route::get('/category', function () {

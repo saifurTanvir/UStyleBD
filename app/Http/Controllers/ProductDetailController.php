@@ -21,7 +21,6 @@ class ProductDetailController extends Controller
     }
 
     public function edit(ProductDetail $productDetail){
-        //dd($product);
         return view('ProductDetail.edit', compact('productDetail'));
     }
 
@@ -40,7 +39,6 @@ class ProductDetailController extends Controller
             'fbLink' => 'required',
             'instraLink' => 'required'
         ]);
-
 
 
         $productDetail->update([
