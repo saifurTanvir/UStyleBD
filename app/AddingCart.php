@@ -9,7 +9,7 @@ class AddingCart extends Model
     protected $guarded = [];
 
     public function details(){
-        return $this->belongsTo(ProductDetail::class, 'id');
+        return $this->belongsTo(ProductDetail::class, 'product_detail_id');
     }
 
     public function user(){

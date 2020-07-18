@@ -11,9 +11,15 @@ use PhpParser\Node\Stmt\DeclareDeclare;
 class AddingCartController extends Controller
 {
     public function index(){
+        // dd(ProductDetail::first()->addingCart);
+        //dd(AddingCart::first()->details);
+
+
+
         $user = auth()->user();
         $carts = $user->addingCart;
         $carts->load('details.productDetailable');
+        //dd($carts);
         $total = 0;
         foreach ($carts as $cart){
             $total = $total + $cart->net;
@@ -30,7 +36,7 @@ class AddingCartController extends Controller
         ]);
 
         $data2 = auth()->user()->addingCart()->create([
-            'product_detail_id' => $productDetail->productDetailable_id,
+            'product_detail_id' => $productDetail->id,
             'quantity' => request()->quantity,
             'total' => ((int)(request()->quantity * $productDetail->productDetailable->price)),
             'net' => ((int)(request()->quantity * $productDetail->productDetailable->price)

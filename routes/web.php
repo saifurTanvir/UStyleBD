@@ -41,7 +41,7 @@ Route::delete('/newArrival/{product}', 'NewArrivalController@destroy')->name('ne
 
 
 
-Route::get('/productDetails/{product}', 'ProductDetailController@index')->name('productDetail.index');
+Route::get('/productDetails/{product}/featureProduct', 'ProductDetailController@index')->name('productDetail.index');
 Route::get('/productDetails/{product}/newArrival', 'ProductDetailController@indexForNewArrival')->name('productDetail.index.newArrival');
 
 Route::get('/productDetails/{productDetail}/edit', 'ProductDetailController@edit')->name('productDetail.edit');

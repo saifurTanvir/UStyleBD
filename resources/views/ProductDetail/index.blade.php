@@ -28,7 +28,7 @@
                     </div>
                 </div>
                 <div class="col-lg-5 offset-lg-1">
-                    <form method="post" action="{{route('addingCart.create', $detail->productDetailable_id)}}">
+                    <form method="post" action="{{route('addingCart.create', $detail->id)}}">
                         @csrf
                         <div class="s_product_text">
                             <h3>Faded SkyBlu Denim Jeans</h3>

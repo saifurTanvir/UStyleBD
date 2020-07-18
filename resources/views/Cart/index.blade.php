@@ -28,6 +28,7 @@
                     <tr>
                         <th scope="col">Product Photo</th>
                         <th scope="col">Product Name</th>
+                        <th scope="col">Discount</th>
                         <th scope="col">Quantity</th>
                         <th scope="col">Total</th>
                         <th scope="col">Net</th>
@@ -48,7 +49,10 @@
                             <h3>{{$cart->details->productDetailable->title}}</h3>
                         </td>
                         <td>
-                            <h3>{{$cart->quantity}}%</h3>
+                            <h3>{{$cart->details->discount}}%</h3>
+                        </td>
+                        <td>
+                            <h3>{{$cart->quantity}}</h3>
                         </td>
                         <td>
                             <h3>{{$cart->total}} Taka</h3>
@@ -58,6 +62,7 @@
                         </td>
                     </tr>
                     @endforeach
+
 
 
 
