@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="{{asset('css/slick.css')}}">
     <!-- style CSS -->
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -34,7 +35,7 @@
         <div class="row align-items-center justify-content-center">
             <div class="col-lg-11">
                 <nav class="navbar navbar-expand-lg navbar-light">
-                    <a class="navbar-brand" href="index.html"> UStyleBD </a>
+                    <a class="navbar-brand" href="{{route('index')}}"> UStyleBD </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
                             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="Toggle navigation">
@@ -47,8 +48,18 @@
                                 <a class="nav-link" href="/index">Home</a>
                             </li>
 
-                            <li class="nav-item">
-                                <a class="nav-link" href="/category"> shop category</a>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown_1"
+                                   role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Category
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown_1">
+                                    @foreach($categories as $category)
+                                        <a class="dropdown-item" href="{{route('category', $category->category)}}"> {{$category->category}}</a>
+                                    @endforeach
+
+
+                                </div>
                             </li>
 
                             <li class="nav-item">
@@ -59,15 +70,33 @@
                                 <a class="nav-link" href="/contact"> Contact</a>
                             </li>
 
-                            <li class="nav-item">
-                                <a class="nav-link" href="/aboutUs"> About Us</a>
-                            </li>
+                            @cannot('create', App\Admin::class)
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/aboutUs"> About Us</a>
+                                </li>
+                            @endcan
+
+                            @can('create', App\Admin::class)
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/aboutUs"> Control Orders</a>
+                                </li>
+                            @endcannot
+
+
                         </ul>
                     </div>
                     <div class="hearer_icon d-flex">
-                        <a href="{{route('addingCart.index')}}"  class="mt-2 ">Cart<span class="badge text-danger w-25">5</span></a>
+                        @if(auth()->user())
+                            <a href="{{route('order.index')}}"  class="mt-2 mr-3 ">Order</a>
+                            <a href="{{route('addingCart.index')}}"  class="mt-2 ">Cart</a>
+                        @endif
 
 
+                        @can('create', App\Admin::class)
+                            <li class="nav-item">
+                                <a class="nav-link" href="/aboutUs"> Control Orders</a>
+                            </li>
+                        @endcannot
 
                             @guest
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>

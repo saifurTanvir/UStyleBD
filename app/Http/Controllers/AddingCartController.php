@@ -17,7 +17,7 @@ class AddingCartController extends Controller
 
 
         $user = auth()->user();
-        $carts = $user->addingCart;
+        $carts = $user->addingCart->where('status','onCart')->sortByDesc('id');
         $carts->load('details.productDetailable');
         //dd($carts);
         $total = 0;
@@ -46,5 +46,10 @@ class AddingCartController extends Controller
 
         return redirect()->route('index');
 
+    }
+
+    public function delete(AddingCart $cartId){
+        $cartId->delete();
+        return redirect()->route('addingCart.index');
     }
 }

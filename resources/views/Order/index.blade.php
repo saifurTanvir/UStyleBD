@@ -35,7 +35,6 @@
                             <th scope="col">Discount</th>
                             <th scope="col">Net</th>
                             <th scope="col">Status</th>
-                            <th scope="col" style="float: left">Action</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -69,75 +68,18 @@
                                     <h3 class="text-info">{{$cart->status}}</h3>
                                 </td>
                                 <td>
-                                    <a href="{{route('cart.delete', $cart->id)}}"><i class="fa fa-trash " style="font-size:24px; float: left"></i></a>
                                 </td>
                             </tr>
                         @endforeach
-
-
-
-
-                        <tr class="shipping_area ">
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td><h5>Free Shipping</h5></td>
-
-                            <td><h3>0.00 Taka</h3></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>
-                                <h5>Total</h5>
-                            </td>
-                            <td>
-                                <h3>{{$total}} Taka</h3>
-                            </td>
-                            <td></td>
-                        </tr>
-                        <tr class="shipping_area">
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td><h5 >Payment Option</h5></td>
-                            <td >
-                                <div class="form-check-inline">
-                                    <label class="form-check-label">
-                                        <input type="radio" class="form-check-input" name="optradio">Bkash
-                                    </label>
-                                </div>
-                            </td>
-
-                            <td>
-                                <div class="form-check-inline">
-                                    <label class="form-check-label">
-                                        <input type="radio" class="form-check-input" name="optradio" checked>Kash on Dalivary
-                                    </label>
-                                </div>
-                            </td>
-                        </tr>
-
                         </tbody>
                     </table>
-                    <div class="checkout_btn_inner float-right">
-                        <a class="btn_1" href="{{route('index')}}">Continue Shopping</a>
-                        <a class="btn_1 checkout_btn_1" href="{{route('checkout.index')}}">Proceed to checkout</a>
-                    </div>
+
                 </div>
 
-
-                @else
-                    <div class="alert alert-info" role="alert">
-                        Your Cart is empty!!!
-                    </div>
+            @else
+                <div class="alert alert-info" role="alert">
+                    Your Order is empty!!!
+                </div>
             @endif
         </div>
     </div>

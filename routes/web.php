@@ -20,6 +20,7 @@ Route::get('/', function () {
 });
 
 Route::get('/index', 'AdminController@index')->name('index');
+Route::get('/products/{categoryName}/category', 'CategoryController@index')->name('category');
 
 Route::get('/coverImage', 'CoverImageController@create')->name('coverImage.create');
 Route::post('/coverImage', 'CoverImageController@update')->name('coverImage.update');
@@ -49,6 +50,11 @@ Route::patch('/productDetails/{productDetail}', 'ProductDetailController@update'
 
 Route::post('/addingCart/{productDetail}', 'AddingCartController@create')->name('addingCart.create');
 Route::get('/customer/cart', 'AddingCartController@index')->name('addingCart.index');
+Route::get('/customer/cart/{cartId}/delete', 'AddingCartController@delete')->name('cart.delete');
+
+Route::get('/customer/cart/toCheckout', 'CheckoutController@index')->name('checkout.index');
+
+Route::get('/customer/orders','OrderController@index')->name('order.index');
 
 
 
