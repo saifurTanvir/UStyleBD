@@ -8,7 +8,7 @@ class OrderController extends Controller
 {
     public function index(){
         $user = auth()->user();
-        $carts = $user->addingCart->where('status','ordered')->sortByDesc('id');
+        $carts = $user->addingCart->where('status', '!=', 'onCart')->sortByDesc('id');
         $carts->load('details.productDetailable');
         //dd($carts);
         $total = 0;

@@ -78,7 +78,7 @@
 
                             @can('create', App\Admin::class)
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/aboutUs"> Control Orders</a>
+                                    <a class="nav-link" href="{{route('admin.orders')}}"> Control Orders</a>
                                 </li>
                             @endcannot
 

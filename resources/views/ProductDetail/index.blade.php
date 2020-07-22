@@ -48,7 +48,7 @@
 
                             </ul>
                             <p>
-                                Mill Oil is an innovative oil filled radiator with the most modern technology. If you are looking for something that can make your interior look awesome, and at the same time.
+                                {{$detail->description}}
                             </p>
                             <div class="card_area">
                                 <div class="product_count d-inline-block">
@@ -62,9 +62,8 @@
                                 </div>
 
                                 <div class="social_icon">
-                                    <a href="#" class="fb"><i class="ti-facebook"></i></a>
-                                    <a href="#" class="tw"><i class="ti-twitter-alt"></i></a>
-                                    <a href="#" class="li"><i class="ti-linkedin"></i></a>
+                                    <a href="{{$detail->fbLink}}" class="fb"><i class="ti-facebook"></i></a>
+                                    <a href="{{$detail->instraLink}}" class="li"><i class="ti-linkedin"></i></a>
                                 </div>
                                 @can('create', App\Admin::class)
                                     <a href="{{route('productDetail.edit', $detail->id)}}" class="btn btn-dark mt-4">Edit Details</a>

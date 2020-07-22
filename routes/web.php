@@ -74,6 +74,9 @@ Route::get('/contact', function () {
     return view('Customer.contact');
 });
 
+Route::get('/admin/orders', 'AdminController@orderIndex')->name('admin.orders');
+Route::get('/admin/order/{orderId}/control/{status}', 'AdminController@orderEdit')->name('admin.order.edit');
+
 Route::get('/facebookLogin/redirect', 'SocialAuthFacebookController@redirect');
 Route::get('/facebookLogin/callback', 'SocialAuthFacebookController@callback');
 

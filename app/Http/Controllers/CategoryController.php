@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 class CategoryController extends Controller
 {
     public function index($categoryName){
-        dd($categoryName);
+        $productsDetail = ProductDetail::where('category', $categoryName)->get();
+        return view('Customer.category', compact('productsDetail'));
     }
 }
