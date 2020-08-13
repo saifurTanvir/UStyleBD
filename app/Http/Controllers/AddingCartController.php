@@ -35,16 +35,22 @@ class AddingCartController extends Controller
             'quantity' => 'required|numeric'
         ]);
 
-        $data2 = auth()->user()->addingCart()->create([
-            'product_detail_id' => $productDetail->id,
-            'quantity' => request()->quantity,
-            'total' => ((int)(request()->quantity * $productDetail->productDetailable->price)),
-            'net' => ((int)(request()->quantity * $productDetail->productDetailable->price)
-                - ($productDetail->productDetailable->price * ($productDetail->discount/100))),
-            'status' => "onCart",
-        ]);
+        if(auth()->user()){
+            $data2 = auth()->user()->addingCart()->create([
+                'product_detail_id' => $productDetail->id,
+                'quantity' => request()->quantity,
+                'total' => ((int)(request()->quantity * $productDetail->productDetailable->price)),
+                'net' => ((int)(request()->quantity * $productDetail->productDetailable->price)
+                    - ($productDetail->productDetailable->price * ($productDetail->discount/100))),
+                'status' => "onCart",
+            ]);
+        }
+        else{
+            return redirect()->route('login');
+        }
 
-        return redirect()->route('index');
+
+        return redirect()->route('addingCart.index');
 
     }
 

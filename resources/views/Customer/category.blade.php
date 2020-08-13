@@ -20,7 +20,7 @@
     <!-- breadcrumb start-->
 
     <!--================Category Product Area =================-->
-    <section class="cat_product_area section_padding ">
+    <section class="mt-5 ">
         <div class="container">
             <div class="row">
 
@@ -39,7 +39,7 @@
                         <div class="col-lg-4 col-sm-6">
                             <div class="single_category_product">
                                 <div class="single_category_img">
-                                    <a href=""><img src="{{asset('storage/'.$productDetail->productDetailable->image)}}" height='400' weidth='500' alt=""></a>
+                                    <a href="{{route('index.category', $productDetail->id)}}"><img src="{{asset('storage/'.$productDetail->productDetailable->image)}}" height='400' weidth='500' alt=""></a>
 
                                     <div class="category_product_text">
                                         <a href="single-product.html"><h5>{{$productDetail->productDetailable->title}}</h5></a>

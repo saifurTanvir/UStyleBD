@@ -10,6 +10,11 @@ use Intervention\Image\Facades\Image;
 
 class ProductDetailController extends Controller
 {
+    public function indexForCategory(ProductDetail $detail){
+        $product = $detail->productDetailable()->first();
+        return view('ProductDetail.index', compact('product', 'detail'));
+    }
+
     public function index(FeatureProductMaster $product){
         $detail = $product->productDetail()->first();
         return view('ProductDetail.index', compact('product', 'detail'));

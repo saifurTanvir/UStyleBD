@@ -5,7 +5,7 @@
 
 
     <!--================Single Product Area =================-->
-    <div class="product_image_area section_padding">
+    <div class="mt-5">
         <div class="container">
             <div class="row s_product_inner">
                 <div class="col-lg-5">
