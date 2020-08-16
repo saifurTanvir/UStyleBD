@@ -13,17 +13,17 @@ class AdminController extends Controller
     public function index(){
         $coverImage = CoverImage::orderBy('id', 'desc')->first();
         $featureProducts = FeatureProductMaster::orderBy('id', 'desc')->take(3)->get();
-        $newArrivals = NewArrival::orderBy('id', 'desc')->take(3)->get();
+        $newArrivals = NewArrival::orderBy('id', 'desc')->get();
         return view('Customer.index', compact('coverImage', 'featureProducts', 'newArrivals'));
     }
 
-    public function orderIndex(){
+    public function ControlOrderIndex(){
         $carts = AddingCart::where('status', '!=', 'complete')->orderBy('id', 'desc')->get();
 
         return view('Order.orderIndex', compact('carts'));
     }
 
-    public function orderEdit(AddingCart $orderId, $status){
+    public function ControlOrderEdit(AddingCart $orderId, $status){
         $orderId->update(['status'=> $status]);
         return redirect()->route('admin.orders');
     }

@@ -19,7 +19,7 @@
 <!-- breadcrumb start-->
 
 <!--================Cart Area =================-->
-<section class="cart_area section_padding">
+<section class="mt-5">
     <div class="container">
         <div class="cart_inner">
             @if(count($carts))
