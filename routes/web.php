@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
+//https://www.codermen.com/blog/66/laravel-5-7-facebook-login-tutorial-step-by-step
 
 Route::get('/', function () {
     return view('welcome');
